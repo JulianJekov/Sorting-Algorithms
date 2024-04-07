@@ -1,4 +1,3 @@
-import java.time.LocalTime;
 import java.util.Random;
 
 public class MergeSort {
@@ -11,15 +10,16 @@ public class MergeSort {
             numbers[i] = random.nextInt(100000);
         }
 
-        System.out.println("Before sorting " + LocalTime.now());
-
+        long startTime = System.currentTimeMillis();
+        System.out.println("Before sorting");
         printNumbers(numbers);
 
         mergeSort(numbers);
 
-        System.out.println("\nAfter sorting " + LocalTime.now());
-
+        long endTime = System.currentTimeMillis();
+        System.out.println("\nAfter sorting");
         printNumbers(numbers);
+        System.out.printf("\nTotal: %d ms", endTime - startTime);
     }
 
     private static void mergeSort(int[] numbers) {

@@ -1,4 +1,3 @@
-import java.time.LocalTime;
 import java.util.Random;
 
 public class InsertionSort {
@@ -11,15 +10,16 @@ public class InsertionSort {
             numbers[i] = random.nextInt(100);
         }
 
-        System.out.println("Before sorting " + LocalTime.now());
-
+        long startTime = System.currentTimeMillis();
+        System.out.println("Before sorting");
         printNumbers(numbers);
 
         insertionSort(numbers);
 
-        System.out.println("\nAfter sorting " + LocalTime.now());
-
+        long endTime = System.currentTimeMillis();
+        System.out.println("\nAfter sorting");
         printNumbers(numbers);
+        System.out.printf("\nTotal: %d ms", endTime - startTime);
     }
 
     private static void insertionSort(int[] numbers) {

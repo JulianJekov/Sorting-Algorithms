@@ -1,26 +1,26 @@
-import java.time.LocalTime;
 import java.util.Random;
+
 public class BubbleSort {
     public static void main(String[] args) {
 
         Random random = new Random();
 
-        int[] numbers = new int[10000];
+        int[] numbers = new int[10];
 
         for (int i = 0; i < numbers.length; i++) {
             numbers[i] = random.nextInt(100000);
         }
 
-        System.out.println("Before sorting " + LocalTime.now());
-
-//        printNumbers(numbers);
+        long startTime = System.currentTimeMillis();
+        System.out.println("Before sorting");
+        printNumbers(numbers);
 
         bubbleSort(numbers);
 
-//        printNumbers(numbers);
-
-        System.out.println("\nAfter sorting " + LocalTime.now());
-
+        long endTime = System.currentTimeMillis();
+        System.out.println("\nAfter sorting");
+        printNumbers(numbers);
+        System.out.printf("\nTotal: %d ms", endTime - startTime);
     }
 
     private static void bubbleSort(int[] numbers) {
